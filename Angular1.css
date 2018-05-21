@@ -1,0 +1,32 @@
+#table {
+	padding-left:10%;
+	width: 50%;
+
+}
+
+.rowDiv {
+	width: 50%;
+	padding-left: 10%;
+	padding-top: 1%;
+}
+
+#stats {
+	padding-left:10%;
+}
+
+#left {
+	background-color: indigo;
+	float:left;
+	width: 20%;
+}
+
+#middle {
+	/*background-color: blue; */
+
+}
+
+#right {
+	background-color: red;
+	float: right;
+	width: 20%;
+}

@@ -1,0 +1,94 @@
+<html ng-app="app1">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="Angular1.js"></script>
+    <link rel="stylesheet" type="text/css" href="Angular1.css">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body ng-controller="ctrl1" ng-init="putTable()">
+
+<div id="left">
+
+</div>
+
+<div id="middle" >
+
+    <form name="lineForm" ng-submit="lineForm.$valid && handleAdd()" novalidate>
+        <div class="rowDiv">
+            <label>Name</label><input class="form-control" type="text" ng-model="mod.name" id="name" name="name" required/>
+        </div>
+
+        <div class="rowDiv">
+            <label>Credit</label><input class="form-control" min="1" type="number" ng-model="mod.credit" id="credit" name="credit" required/>
+        </div>
+
+        <div class="rowDiv">
+            <label>Note</label><input class="form-control" step="0.1" min="1.0" max="5.0" type="number" ng-model="mod.note" id="note" name="note" required/>
+        </div>
+
+        <div class="rowDiv">
+            <label>Submit</label><input class="form-control" step="0.1" min="1.0" max="5.0" type="submit"/>
+        </div>
+    </form>
+
+    <div id="stats">
+        Count: {{anzahl}}
+        <br>
+        Durchschnitt: {{schnitt}}
+        <br><br>
+    </div>
+
+    <div id="table">
+
+        <table class="table table-hover" border="1">
+
+            <tr>
+                <td>Name</td>
+                <td>Credit</td>
+                <td>Note</td>
+            </tr>
+
+
+            <!--
+              <tr table-row=""></tr>
+
+              <td>{{ x.name }}</td>
+              <td>{{ x.credit }}</td>
+              <td>{{ x.note }}</td>
+            </tr>
+            -->
+
+
+            <tr table-row="" ng-repeat="x in module" test="anzahl" m="x"  on-delete="deleteRow($index)"></tr>
+
+
+        </table>
+
+        <!-- <table-row></table-row> -->
+
+        <button ng-click="dele()">Add</button>
+
+        <!--
+        <table-row on-add="handleAdd(name, credit, note)"></table-row>
+        -->
+
+
+    </div>
+
+
+</div>
+
+<div id="right">
+
+</div>
+
+</body>
+
+</html>
